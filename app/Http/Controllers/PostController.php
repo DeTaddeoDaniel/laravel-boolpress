@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Post;
 
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index(){
-        return 'ciao, sei in index guest';
+        $posts = Post::all();
+        dd($posts);
+        return view( 'guest.post.index' );
     }
 }
