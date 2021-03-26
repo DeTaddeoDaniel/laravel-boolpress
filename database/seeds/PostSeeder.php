@@ -35,9 +35,9 @@ class PostSeeder extends Seeder
 
         $newPost->slung = $slung;
 
-        $countUser = Count(User::all()->toArray());
-        $newPost->user_id = rand(1,$countUser);
-        
+        $countUser = User::all()->toArray();
+        $newPost->user_id = $countUser[array_rand($countUser)]['id'];
+
         $newPost->content = $faker->text();
         
         $newPost->save();
