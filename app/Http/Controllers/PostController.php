@@ -18,14 +18,14 @@ class PostController extends Controller
         return view( 'guest.post.index', $data );
     }
 
-    public function show(){
+    public function show($slung){
 
-        $posts = Post::all();
+        $post = Post::where('slung',$slung)->first();
         
         $data = [
-            'posts' => $posts
+            'post' => $post
         ];
         
-        return view( 'guest.post.index', $data );
+        return view( 'guest.post.show', $data );
     }
 }
