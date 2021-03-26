@@ -17,4 +17,15 @@ class PostController extends Controller
         
         return view( 'guest.post.index', $data );
     }
+
+    public function show(){
+
+        $posts = Post::all();
+        
+        $data = [
+            'posts' => $posts
+        ];
+        
+        return view( 'guest.post.index', $data );
+    }
 }

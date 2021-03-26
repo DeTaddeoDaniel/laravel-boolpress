@@ -17,7 +17,7 @@
                         <p class="card-text">{{$post->content}}</p>
                         <h6 class="card-subtitle mb-2 text-muted">Autore: {{$post->user->name}}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">Data: {{$post->updated_at}}</h6>
-                        {{-- <a href="#" class="card-link">Card link</a> --}}
+                        <a href="{{route('guest.post.show', $post->slung)}}" class="card-link">Show</a>
                         {{-- <a href="#" class="card-link">Another link</a> --}}
                     </div>
                 </div>

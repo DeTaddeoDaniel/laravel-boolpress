@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/posts', 'PostController@index')->name('guest.post.index');
+Route::get('/post/{slung}', 'PostController@show')->name('guest.post.show');
 
 Auth::routes();
 
