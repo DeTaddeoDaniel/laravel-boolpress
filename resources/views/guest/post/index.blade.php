@@ -14,8 +14,8 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">{{$post->title}}</h5>
-                        {{-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
                         <p class="card-text">{{$post->content}}</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Autore: {{$post->user->name}}</h6>
                         {{-- <a href="#" class="card-link">Card link</a> --}}
                         {{-- <a href="#" class="card-link">Another link</a> --}}
                     </div>
