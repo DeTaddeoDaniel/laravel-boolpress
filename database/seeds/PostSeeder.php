@@ -24,11 +24,8 @@ class PostSeeder extends Seeder
 
         // $slung = Str::slug( 'ciao');
         // $slungIniziale = Str::slug( 'ciao');
-        
         $presentePost = Post::where('slung',$slung)->first();
-
         $contatore=1;
-
         while($presentePost){
             $slung= $slungIniziale . '-' . $contatore;
             $presentePost = Post::where('slung',$slung)->first();
@@ -36,7 +33,7 @@ class PostSeeder extends Seeder
         }
 
         $newPost->slung = $slung;
-
+        $newPost->user_id = 1;
         $newPost->content = $faker->text();
         
         $newPost->save();
