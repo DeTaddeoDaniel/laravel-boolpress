@@ -34,6 +34,13 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::table('posts', function (Blueprint $table) {
+            # rimuovi relazione
+            $table->dropForeign('posts_user_id_foreign');
+
+            # cancella colonna
+            $table->dropColumn('user_id');
+
+        });
     }
 }
