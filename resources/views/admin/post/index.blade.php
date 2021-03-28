@@ -13,7 +13,7 @@
            <div class="cards d-flex align-content-around flex-wrap">
 
             <div class="mb-3">
-                <button class="btn btn-info">
+                <button class="btn btn-success">
                     <a class="text-light" href="{{route('post.create')}}" >Crea nuovo post</a>
                 </button>
             </div>
@@ -52,7 +52,21 @@
                             <td>{{$post->user->name}}</td>
                             <td>{{$post->created_at}}</td>
                             <td>{{$post->updated_at}}</td>
-                            <td>action</td>
+                            <td>
+                                <button class="btn btn-info">
+                                    <a class="text-light" href="{{route('post.show', $post->id)}}" >View</a>
+                                </button>
+
+                                <button class="btn btn-secondary">
+                                    <a class="text-light" href="{{route('post.edit', $post->id)}}" >Edit</a>
+                                </button>
+
+                                <form action="{{route('post.destroy', $post)}}" method="POST" class="d-inline-block">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                </form>
+                            </td>
                         </tr>
                 
                     @endforeach
