@@ -18,12 +18,12 @@
 
                 <div class="mb-3">
                     <label for="title-post" class="form-label">Title post</label>
-                    <input type="text" class="form-control" id="title-post" placeholder="Titolo del post" value="{{$post->title}}">
+                    <input type="text" class="form-control" id="title-post" placeholder="Titolo del post" name="title" value="{{old('title',$post->title)}};">
                 </div>
                 
                 <div class="mb-3">
                     <label for="content-post" class="form-label">Title post</label>
-                    <textarea type="textarea" class="form-control" id="content-post" placeholder="Contenuto del form">{{$post->content}}</textarea>
+                    <textarea type="textarea" class="form-control" name="content" id="content-post" placeholder="Contenuto del form">{{old('content', $post->content)}};</textarea>
                 </div>
 
                 <button type="submit" class="btn btn-success">Salva modifiche</button>

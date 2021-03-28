@@ -14,19 +14,22 @@
                 <h1>Modifica un post</h1>
             </div>
             
-            <form>
+            <form action="{{route('post.store')}}" method="POST">
+
+                @csrf
 
                 <div class="mb-3">
                     <label for="title-post" class="form-label">Title post</label>
-                    <input type="text" class="form-control" id="title-post" placeholder="Titolo del post">
+                    <input type="text" class="form-control" id="title-post" placeholder="Titolo del post" name="title">
                 </div>
                 
                 <div class="mb-3">
                     <label for="content-post" class="form-label">Title post</label>
-                    <textarea type="textarea" class="form-control" id="content-post" placeholder="Contenuto del form"></textarea>
+                    <textarea type="textarea" class="form-control" id="content-post" name="content" placeholder="Contenuto del form">
+                    </textarea>
                 </div>
 
-                <button type="submit" class="btn btn-success">Salva modifiche</button>
+                <button type="submit" class="btn btn-success">Crea un nuovo post</button>
 
             </form>
 
