@@ -61,7 +61,7 @@
                                     <a class="text-light" href="{{route('post.edit', $post->id)}}" >Edit</a>
                                 </button>
 
-                                <form action="{{route('post.destroy', $post)}}" method="POST" class="d-inline-block">
+                                <form action="{{route('post.destroy', $post->id)}}" method="POST" class="d-inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger" type="submit">Delete</button>
