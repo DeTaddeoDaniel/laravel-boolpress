@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
 
         <div class="col-1">
-            <a href="route('Post.index')">Posts</a>
+            <a href="{{route('post.index')}}">Posts</a>
         </div>
 
         <div class="col-11">
@@ -35,7 +35,7 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Title</th>
-                        <th scope="col">User ID</th>
+                        <th scope="col">Autore</th>
                         <th scope="col">Creato il</th>
                         <th scope="col">Aggiornato il</th>
                         <th scope="col">Azione</th>
