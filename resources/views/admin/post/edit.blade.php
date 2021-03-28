@@ -14,7 +14,10 @@
                 <h1>Modifica un post</h1>
             </div>
             
-            <form>
+            <form action="{{route('post.update',$post)}}" method="POST">
+                
+                @csrf
+                @method('PUT')
 
                 <div class="mb-3">
                     <label for="title-post" class="form-label">Title post</label>
