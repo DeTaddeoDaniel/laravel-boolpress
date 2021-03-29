@@ -98,7 +98,10 @@ class PostController extends Controller
     {
         $data = $request->all();
         $post->update($data);
-        $post->tags()->sync($data['tags']);
+
+        if(array_key_exists('tags', $data)){
+            $post->tags()->sync($data['tags']);
+        }
 
         return redirect()-> route('post.show', $post->id);
     }
@@ -111,6 +114,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $post->tags()->sync([]);
         $post->delete();
         return redirect()-> route('post.index');
     }
