@@ -30,13 +30,11 @@
                 </div>
 
                 <label>Tipologia post</label>
-                
-
                 @foreach ($tags as $tag)
 
-                @php
-                    // dd($tag->id);
-                @endphp
+                    @php
+                        // dd($tag->id);
+                    @endphp
                     
                     <div class="form-check mb-2">
                         <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="tags[]" value="{{$tag->id}}">

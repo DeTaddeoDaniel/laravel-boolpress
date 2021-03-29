@@ -21,13 +21,30 @@
 
                 <div class="mb-3">
                     <label for="title-post" class="form-label">Title post</label>
-                    <input type="text" class="form-control" id="title-post" placeholder="Titolo del post" name="title" value="{{old('title',$post->title)}};">
+                    <input type="text" class="form-control" id="title-post" placeholder="Titolo del post" name="title" value="{{old('title',$post->title)}}">
                 </div>
                 
                 <div class="mb-3">
                     <label for="content-post" class="form-label">Title post</label>
-                    <textarea type="textarea" class="form-control" name="content" id="content-post" placeholder="Contenuto del form">{{old('content', $post->content)}};</textarea>
+                    <textarea type="textarea" class="form-control" name="content" id="content-post" placeholder="Contenuto del form">{{old('content', $post->content)}}</textarea>
                 </div>
+
+
+                <label>Tipologia post</label>
+                @foreach ($tags as $tag)
+
+                    @php
+                        // dd($tag->id);
+                    @endphp
+                    
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="tags[]" value="{{$tag->id}}" {{$post->tags->contains($tag->id) ? 'checked' : ''}}>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            {{$tag->name}}
+                        </label>
+                    </div>
+
+                @endforeach
 
                 <button type="submit" class="btn btn-success">Salva modifiche</button>
 

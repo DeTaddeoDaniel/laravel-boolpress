@@ -69,7 +69,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        $data = ['post' => $post];
+        $tags = Tag::all();
+        $data = ['post' => $post, 'tags'=>$tags];
         return View('Admin/Post/show', $data);
     }
 
@@ -81,7 +82,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $data = ['post' => $post];
+        $tags = Tag::all();
+        $data = ['post' => $post, 'tags'=>$tags];
         return View('Admin/Post/edit', $data);
     }
 
@@ -96,6 +98,7 @@ class PostController extends Controller
     {
         $data = $request->all();
         $post->update($data);
+        $post->tags()->sync($data['tags']);
 
         return redirect()-> route('post.show', $post->id);
     }
