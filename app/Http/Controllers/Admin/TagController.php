@@ -43,8 +43,6 @@ class TagController extends Controller
 
         $newTag = new Tag();
 
-        // $newPost = fill($data);
-        // dd($data);
         $newTag->name = $data['name'];
         $newTag->slung = Str::slug($data['name']);
 

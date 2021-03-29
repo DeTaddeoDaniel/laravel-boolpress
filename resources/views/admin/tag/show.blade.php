@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
 
         <div class="col-1">
-            <a href="route('Post.index')">Posts</a>
+            <a href="route('Post.index')">Tags</a>
         </div>
 
         <div class="col-11">
