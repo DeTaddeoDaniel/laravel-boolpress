@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 Use App\Post;
 use App\Tag;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -53,6 +54,9 @@ class PostController extends Controller
         $newPost->content= $data['content'];
         $newPost->user_id = auth::id();
         $newPost->slung = Str::slug($data['title']);
+
+        $cover_path = Storage::put('post_cover', $data['image']);
+        $newPost->cover = $cover_path;
 
         $newPost->save();
 
