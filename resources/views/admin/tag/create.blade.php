@@ -11,7 +11,7 @@
         <div class="col-11">
 
             <div class="mb-3">
-                <h1>Modifica un tag</h1>
+                <h1>Crea un tag</h1>
             </div>
             
             <form action="{{route('tag.store')}}" method="POST">

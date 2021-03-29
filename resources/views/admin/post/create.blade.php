@@ -11,7 +11,7 @@
         <div class="col-11">
 
             <div class="mb-3">
-                <h1>Modifica un post</h1>
+                <h1>Crea un post</h1>
             </div>
             
             <form action="{{route('post.store')}}" method="POST">
@@ -28,6 +28,25 @@
                     <textarea type="textarea" class="form-control" id="content-post" name="content" placeholder="Contenuto del form">
                     </textarea>
                 </div>
+
+                <label>Tipologia post</label>
+                
+
+                @foreach ($tags as $tag)
+
+                @php
+                    // dd($tag->id);
+                @endphp
+                    
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="tags[]" value="{{$tag->id}}">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            {{$tag->name}}
+                        </label>
+                    </div>
+
+                @endforeach
+                
 
                 <button type="submit" class="btn btn-success">Crea un nuovo post</button>
 
