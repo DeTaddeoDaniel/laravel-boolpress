@@ -74,7 +74,15 @@
                 </tbody>
             </table>
 
-
+            <div>
+                {{ $posts->links() }}
+                {{-- <p>
+                    Pagina {{$posts->currentPage()}} di {{$posts->total()}}
+                </p> --}}
+                <p>
+                    Risultati da {{$posts->firstItem()}} - {{$posts->LastItem()}} di {{$posts->total()}}
+                </p>
+            </div>
         </div>
     </div>
 </div>
