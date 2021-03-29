@@ -14,7 +14,7 @@
                 <h1>Modifica un post</h1>
             </div>
             
-            <form action="{{route('post.update',$post)}}" method="POST">
+            <form action="{{route('post.update',$post)}}" method="POST" enctype="multipart/form-data">
                 
                 @csrf
                 @method('PUT')
@@ -22,6 +22,11 @@
                 <div class="mb-3">
                     <label for="title-post" class="form-label">Title post</label>
                     <input type="text" class="form-control" id="title-post" placeholder="Titolo del post" name="title" value="{{old('title',$post->title)}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="image-photo" class="form-label">Carica immagine</label>
+                    <input class="form-control form-control-sm" id="image-photo" type="file" name="image">
                 </div>
                 
                 <div class="mb-3">
