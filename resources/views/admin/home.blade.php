@@ -17,6 +17,9 @@
                     {{ __('You are logged in!') }}
 
                     <button class="btn btn-primary"><a class="text-light" href="{{route('post.index')}}">Post</a></button>
+
+                    <button class="btn btn-primary"><a class="text-light" href="{{route('tag.index')}}">Tag</a></button>
+
                 </div>
             </div>
         </div>
