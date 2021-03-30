@@ -60,7 +60,9 @@ class PostController extends Controller
 
         $newPost->save();
 
-        $newPost->tags()->sync($data['tags']);
+         if(array_key_exists('tags', $data)){
+            $newPost->tags()->sync($data['tags']);
+        }
 
         return redirect()-> route('post.show', $newPost->id);
     }
