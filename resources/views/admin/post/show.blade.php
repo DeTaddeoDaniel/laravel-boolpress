@@ -22,6 +22,7 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
+                        
                           <th scope="col">Autore</th>
                         <th scope="col">Title</th>
                          <th scope="col">Contenuto</th>
@@ -34,6 +35,13 @@
 
                         <tr>
                             <th scope="row">{{$post->id}}</th>
+                            <td>
+                                @if ($post->cover)
+                                    <img src="{{asset('storage/'.$post->cover)}}" alt="cover del post con titolo {{$post->title}}" height="50px">
+                                @else
+                                    <p>no image</p>
+                                @endif
+                            </td>
                             <td>{{$post->user->name}}</td>
                             <td>{{$post->title}}</td>
                             <td>{{$post->content}}</td>
