@@ -119,6 +119,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->tags()->sync([]);
+        Storage::delete('post_cover', $post->cover);
         $post->delete();
         return redirect()-> route('post.index');
     }

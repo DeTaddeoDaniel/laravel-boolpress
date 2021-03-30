@@ -22,10 +22,10 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        
-                          <th scope="col">Autore</th>
+                        <th scope="col">Cover</th>
+                        <th scope="col">Autore</th>
                         <th scope="col">Title</th>
-                         <th scope="col">Contenuto</th>
+                        <th scope="col">Contenuto</th>
                         <th scope="col">Creato il</th>
                         <th scope="col">Aggiornato il</th>
                     </tr>
