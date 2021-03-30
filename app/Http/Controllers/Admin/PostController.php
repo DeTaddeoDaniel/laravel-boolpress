@@ -88,6 +88,7 @@ class PostController extends Controller
     {
         $tags = Tag::all();
         $data = ['post' => $post, 'tags'=>$tags];
+
         return View('Admin/Post/edit', $data);
     }
 
@@ -101,6 +102,12 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $data = $request->all();
+        if(array_key_exists('image', $data)){
+            Storage::delete('post_cover', $post->cover);
+            $cover_path = Storage::put('post_cover', $data['image']);
+            $post->cover = $cover_path;
+        }
+
         $post->update($data);
 
         if(array_key_exists('tags', $data)){
